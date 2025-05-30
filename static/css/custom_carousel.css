@@ -1,0 +1,35 @@
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  height: 240px;  /* Static height */
+  opacity: 1;
+  position: absolute;  /* Static top position */
+  top: 100px;  /* Static top position */
+}
+
+.carousel-control-prev {
+  left: -0%;
+}
+
+.carousel-control-next {
+  right: -0%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 70% 70%;
+  background-position: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  /* border: 2px solid rgba(255, 255, 255, 0.5); */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+}

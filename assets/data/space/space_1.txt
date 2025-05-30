@@ -1,0 +1,45 @@
+To solve this referring expression, let's break down the steps:
+
+1. **Identify the bed and bed table in the scene graph:**
+    - <span class="text-green">**"object-1" is described as a blanket-type object, positioned on the bed; essentially, this is the bed.**</span>
+    - The referring expression says "place a cup at the upper right corner of the bed table." We need to find the "bed table."
+    - Looking at the captions:
+        - <span class="text-green">**"object-2": dresser near bed, against wall.**</span>
+        - "object-3": white plastic drawer unit, against wall near bed and television.
+        - "object-4": TV, not a table.
+        - The images help: in the 7th image (image 8, bottom right), the nightstand next to the bed is visible.
+    - Given 'object-2' is a small dresser close to the bed (see the BEV), it is serving as a "bed table" or nightstand.
+2. **Determine the orientation ('upper right corner') from the perspective of lying on the bed:**
+    - "Lie on the bed" means we take the perspective from the bed.
+    - From the BEV and scene graph, the bed's x-axis runs left-right, y-axis runs top-bottom.
+    - The 'bed table' (object-2) is at position [-0.47, 1.53, 0.47]. The bed's center is at [-1.37, 0.72, 0.47]. The bed table is to the top right of the bed (in the room's coordinates).
+    - For the purposes of "upper right corner" on object-2:
+        - Object-2's position: [-0.47, 1.53], size: [0.43, 0.54].
+        - These are lengths along the x (0.43) and y (0.54) axes.
+3. **Calculate the upper right corner position of the bed table:**
+    - The center of object-2 is at [-0.47, 1.53].
+    - To find the "upper right corner," <span class="text-red">**from someone lying on the bed and facing the table ("upper" = away from the bed, "right" = towards the outside edge):**</span>
+        - If you are lying on the bed, facing the table, the edge of the table furthest from the bed (in +y direction), <span class="text-red">**rightmost (in +x direction).**</span>
+    - So, starting from the center:
+        - x coordinate: -0.47 + (0.43 / 2) = -0.47 + 0.215 = -0.255
+        - y coordinate: 1.53 + (0.54 / 2) = 1.53 + 0.27 = 1.8
+4. **Determine the z coordinate for placement:**
+    - The bed table's center z is 0.47, its height is 0.54; assuming the top is at center z + 0.54 / 2 = 0.47 + 0.27 = 0.74 meters.
+    - The cup is placed with its base on this surface. The cup's height is 0.3m, so cup center z = surface z (0.74) + 0.3/2 = 0.74 + 0.15 = 0.89
+5. **Cup dimensions:**
+    - Diameter: 0.1 m → bounding box size in x and y: 0.1m
+    - Height: 0.3m → bounding box size in z: 0.3m
+
+**Final predictions:**
+
+Coordinates of cup center:
+
+- xcoordinate: -0.255
+- ycoordinate: 1.8
+- zcoordinate: 0.89
+
+Bounding box sizes:
+
+- xlength: 0.1
+- ylength: 0.1
+- zlength: 0.3

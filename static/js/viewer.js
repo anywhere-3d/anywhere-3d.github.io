@@ -296,25 +296,25 @@ async function load_datas(){
     checkAndExecuteSeqGrounding();
 }
 
-document.getElementById("scene_list").addEventListener("change", async function () {
-    init_scene();
-    init_tween();
-    checkAndExecuteSeqGrounding();
-});
+// document.getElementById("scene_list").addEventListener("change", async function () {
+//     init_scene();
+//     init_tween();
+//     checkAndExecuteSeqGrounding();
+// });
 
-window.addEventListener('resize',function() {
-    mesh_viewer = document.getElementById("mesh_viewer");
-    mesh_seg_viewer = document.getElementById("segmentation");
+// window.addEventListener('resize',function() {
+//     mesh_viewer = document.getElementById("mesh_viewer");
+//     mesh_seg_viewer = document.getElementById("segmentation");
 
-    camera.aspect = mesh_viewer.clientWidth / mesh_viewer.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(mesh_viewer.clientWidth, mesh_viewer.clientHeight);
-    renderer_seg.setSize(mesh_seg_viewer.clientWidth, mesh_seg_viewer.clientHeight);
-    if(scene_graph) {
-        scene_graph.initalLayout.run();
-    }
+//     camera.aspect = mesh_viewer.clientWidth / mesh_viewer.clientHeight;
+//     camera.updateProjectionMatrix();
+//     renderer.setSize(mesh_viewer.clientWidth, mesh_viewer.clientHeight);
+//     renderer_seg.setSize(mesh_seg_viewer.clientWidth, mesh_seg_viewer.clientHeight);
+//     if(scene_graph) {
+//         scene_graph.initalLayout.run();
+//     }
 
-});
+// });
 
 function get_meshsize(mesh){
     const box = new THREE.Box3().setFromObject(mesh);
@@ -711,8 +711,136 @@ function view_scene(){
     }
 }
 
-function main(){
-    init_mesh_viewer();
-    load_datas();
+function load_case_carousel(jsonPath = './assets/data/cases.json') {
+    // Load marked.js if not already loaded
+    if (typeof marked === 'undefined') {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+        script.onload = () => fetchAndProcessCases(jsonPath);
+        document.head.appendChild(script);
+    } else {
+        fetchAndProcessCases(jsonPath);
+    }
+
+    function fetchAndProcessCases(path) {
+        fetch(path)
+            .then(response => response.json())
+            .then(data => {
+                const carouselInner = document.getElementById("carouselInner");
+                if (!carouselInner) {
+                    console.warn("Carousel container not found.");
+                    return;
+                }
+        
+                data.forEach((item, index) => {
+                    const isActive = index === 0 ? "active" : "";
+                    
+                    const formatText = (text) => {
+                        if (!text) return '';
+                        const dirty = marked.parse(text);
+                        const clean = DOMPurify.sanitize(dirty, {
+                            ALLOWED_TAGS: ['p', 'ul', 'ol', 'li', 'strong', 'em', 'code', 'pre', 'span'],
+                            ALLOWED_ATTR: ['class']
+                        });
+                        return clean;
+                    };
+
+                    // BEV Visualization Section with Toggle
+                    const bevSection = item.BEV_path ? `
+                        <div class="case-box case-visualization mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h4>Bird's-Eye View (BEV)</h4>
+                                <button class="btn btn-sm btn-outline-primary toggle-bev" 
+                                        type="button" 
+                                        aria-label="Toggle BEV view">
+                                    👁️ Toggle BEV
+                                </button>
+                            </div>
+                            <div class="bev-container collapse">
+                                <img src="${item.BEV_path}" 
+                                     class="img-fluid mt-2" 
+                                     style="max-height: 800px; width: auto;"
+                                     alt="Bird's Eye View" />
+                            </div>
+                        </div>
+                    ` : '';
+
+                    const errorContent = item.error ? 
+                        `<div class="case-box case-error mt-3">
+                            <h4>Error</h4>
+                            <p>${formatText(item.error)}</p>
+                        </div>` :
+                        `<div class="case-box case-success mt-3">
+                            <h4>Correct</h4>
+                            <p>✅ This is a successful case</p>
+                        </div>`;
+
+                    const itemHTML = `
+                        <div class="carousel-item ${isActive}">
+                            <div class="p-3">
+                                <div class="text-center">
+                                    <img src="${item.img_path}" 
+                                         class="img-fluid" 
+                                         style="max-height: 500px;" 
+                                         alt="Case Image" />
+                                </div>
+                                
+                                <div class="text-left">
+                                    <div class="case-box case-expression mt-3">
+                                        <h4>Expression</h4>
+                                        <p>${formatText(item.expression)}</p>
+                                    </div>
+                                    
+                                    <div class="case-box case-reasoning mt-3">
+                                        <h4>Reasoning</h4>
+                                        <div class="case-reasoning-content">
+                                            ${formatText(item.reasoning)}
+                                        </div>
+                                    </div>
+
+                                    ${bevSection}
+
+                                    ${errorContent}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                      
+                    carouselInner.insertAdjacentHTML("beforeend", itemHTML);
+                });
+
+                // Add event listeners after all items are loaded
+                document.querySelectorAll('.toggle-bev').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const bevContainer = e.target.closest('.case-visualization')
+                                            .querySelector('.bev-container');
+                        const bsCollapse = new bootstrap.Collapse(bevContainer, {
+                            toggle: true
+                        });
+                        
+                        // Update button text
+                        button.textContent = bevContainer.classList.contains('show') 
+                            ? '👁️ Toggle BEV' 
+                            : '🔼 Hide BEV';
+                    });
+                });
+            })
+            .catch(error => {
+                console.error("Failed to load cases.json:", error);
+            });
+    }
 }
-main()
+
+function main() {
+    load_case_carousel();
+}
+
+// Ensure Bootstrap JS is loaded
+if (typeof bootstrap === 'undefined') {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
+    script.onload = main;
+    document.head.appendChild(script);
+} else {
+    main();
+}

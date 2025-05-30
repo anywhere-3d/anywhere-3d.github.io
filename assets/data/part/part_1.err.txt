@@ -1,0 +1,1 @@
+The model fails to reason about the bounding box of the compartment that contains the pink glass and instead returns the bounding box of the pink glass.
