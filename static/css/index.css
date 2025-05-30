@@ -160,3 +160,111 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.case-box {
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: left;
+  border-left: 4px solid;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.case-box h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.case-box p {
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #333; /* Main Text */
+}
+
+/* Expression Style */
+.case-expression {
+  border-color: #FFA500;
+}
+.case-expression h4 {
+  color: #DAA520;
+}
+
+/* Reasoning Style */
+.case-reasoning {
+  border-color: #708090;
+}
+
+/* Fixed Title */
+.case-reasoning h4 {
+  color: #2F4F4F;
+  margin-bottom: 0.5em;
+}
+
+/* Scrolling Part */
+.case-reasoning-content {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5em;
+}
+
+.case-reasoning-content p {
+  margin-bottom: 1em;
+}
+
+.case-reasoning-content ul {
+  list-style: disc;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.case-reasoning-content ul ul {
+  list-style: circle;
+  padding-left: 1.5em;
+}
+
+.case-reasoning-content ul ul ul {
+  list-style: square;
+  padding-left: 1.5em;
+}
+
+.case-reasoning-content li {
+  margin-bottom: 0.3em;
+}
+
+.case-box > div,
+.case-box > p {
+  margin-top: 0.75em;
+}
+
+
+/* Error Style */
+.case-error {
+  border-color: #FF6347;
+}
+.case-error h4 {
+  color: #B22222;
+}
+
+/* Success Style */
+.case-success {
+  border-color: #3CB371;
+}
+.case-success h4 {
+  color: #2E8B57;
+}
+
+.case-reasoning p {
+  margin-bottom: 1em;
+}
+
+.text-red, .text-red strong {
+  color: #c62828 !important;
+}
+.text-green, .text-green strong {
+  color: #2e7d32 !important;
+}
+.text-blue, .text-blue strong {
+  color: #1565c0 !important;
+}
