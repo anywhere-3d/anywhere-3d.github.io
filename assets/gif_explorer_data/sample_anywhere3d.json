@@ -1,4 +1,52 @@
 {
+    "scannet: scene0645_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0645_00/scene0645_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "area_level",
+                "action_steps":[
+                    {
+                        "action": "Choose the protruding area of the room, where you can sit on the armchair or stand in front of the curtains to gaze at the view outside the window.",
+                        "position": [
+                            0.64,
+                            3.56,
+                            1.3
+                        ],
+                        "size": [
+                            2.32,
+                            2.08,
+                            2.64
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "scannet: scene0565_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0565_00/scene0565_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "area_level",
+                "action_steps":[
+                    {
+                        "action": "Imagine you are about to deep clean the room. Identify the area with the most cluttered object arrangement.",
+                        "position": [
+                            0.46,
+                            0.08,
+                            0.99
+                        ],
+                        "size": [
+                            1.69,
+                            2.66,
+                            1.96
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
     "ARKitScenes: scene0040_00":{
         "mesh_file": "./assets/gif_explorer_data/ARKitScenes/scans/scene0040_00/scene0040_00_vh_clean_2.ply",
         "align_mat": 0,
@@ -71,4 +119,6 @@
             }
         ]
     }
+    
+    
 }
