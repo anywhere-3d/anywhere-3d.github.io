@@ -310,7 +310,7 @@ window.addEventListener('resize',function() {
     camera.aspect = mesh_viewer.clientWidth / mesh_viewer.clientHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(mesh_viewer.clientWidth, mesh_viewer.clientHeight);
-    renderer_seg.setSize(mesh_seg_viewer.clientWidth, mesh_seg_viewer.clientHeight);
+    // renderer_seg.setSize(mesh_seg_viewer.clientWidth, mesh_seg_viewer.clientHeight);
     if(scene_graph) {
         scene_graph.initalLayout.run();
     }
@@ -463,7 +463,7 @@ function get_selected_dom(){
 
 function cleanPointCloud() {
     scene.children = []
-    scene_seg.children = []
+    // scene_seg.children = []
 }
 
 function set_basecam(){
