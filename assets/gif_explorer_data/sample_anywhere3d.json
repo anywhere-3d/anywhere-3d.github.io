@@ -167,6 +167,78 @@
             }
         ]
     },
+    "scannet: scene0187_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0187_00/scene0187_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "object_level",
+                "action_steps":[
+                    {
+                        "action": "Locate a table with an aspect ratio of approximately 2:1",
+                        "position": [
+                            1.89,
+                            -1.4,
+                            0.44
+                        ],
+                        "size": [
+                            1.99,
+                            0.91,
+                            0.85
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "scannet: scene0169_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0169_00/scene0169_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "object_level",
+                "action_steps":[
+                    {
+                        "action": "Which object occupies an area of approximately 1.7 square meters and is located beneath a painting?",
+                        "position": [
+                            1.08,
+                            2.63,
+                            0.4
+                        ],
+                        "size": [
+                            2.02,
+                            0.83,
+                            0.79
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "scannet: scene0139_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0139_00/scene0139_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "object_level",
+                "action_steps":[
+                    {
+                        "action": "Which washing machine is 0.3 meters away from the sink?",
+                        "position": [
+                            -0.54,
+                            -0.51,
+                            0.5
+                        ],
+                        "size": [
+                            0.77,
+                            0.74,
+                            1.13
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
     "ARKitScenes: scene0040_00":{
         "mesh_file": "./assets/gif_explorer_data/ARKitScenes/scans/scene0040_00/scene0040_00_vh_clean_2.ply",
         "align_mat": 0,
