@@ -348,7 +348,7 @@ function box_debug(position, size=(1, 1, 1), lineWidth=10, clear=true){
     const geometry = new THREE.BoxGeometry(size[0], size[1], size[2]);
     const edgesGeometry = new THREE.EdgesGeometry(geometry);
     // const lineMaterial = new THREE.LineBasicMaterial({ color: 0xff0000, linewidth: lineWidth });
-    const lineMaterial = new THREE.LineBasicMaterial({ color: 'red'});
+    const lineMaterial = new THREE.LineBasicMaterial({ color: 'green'});
     lineMaterial.linewidth = lineWidth;
     const boxLine = new THREE.LineSegments(edgesGeometry, lineMaterial);
     boxLine.name = 'show_box';
