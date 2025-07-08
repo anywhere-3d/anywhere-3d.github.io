@@ -1,4 +1,28 @@
 {
+    "scannet: scene0565_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0565_00/scene0565_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "area_level",
+                "action_steps":[
+                    {
+                        "action": "Imagine you are about to deep clean the room. Identify the area with the most cluttered object arrangement.",
+                        "position": [
+                            0.46,
+                            0.08,
+                            0.99
+                        ],
+                        "size": [
+                            1.69,
+                            2.66,
+                            1.96
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
     "scannet: scene0645_00":{
         "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0645_00/scene0645_00_vh_clean_2.ply",
         "align_mat": 0,
@@ -23,24 +47,120 @@
             }
         ]
     },
-    "scannet: scene0565_00":{
-        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0565_00/scene0565_00_vh_clean_2.ply",
+    "scannet: scene0081_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0081_00/scene0081_00_vh_clean_2.ply",
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "area_level",
+                "task_description": "space_level",
                 "action_steps":[
                     {
-                        "action": "Imagine you are about to deep clean the room. Identify the area with the most cluttered object arrangement.",
+                        "action": "Face the wall, then move the largest sofa couch 0.5 meters to the left.",
                         "position": [
-                            0.46,
-                            0.08,
-                            0.99
+                            0.8267,
+                            1.5165,
+                            0.62
                         ],
                         "size": [
-                            1.69,
-                            2.66,
-                            1.96
+                            0.7,
+                            3.24,
+                            1.07
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "ARKitScenes: scene0175_00":{
+        "mesh_file": "./assets/gif_explorer_data/ARKitScenes/scans/scene0175_00/scene0175_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "space_level",
+                "action_steps":[
+                    {
+                        "action": "Replace the shelf with another shelf of a lower height, reducing its height to 1.5 meters.",
+                        "position": [
+                            -0.8739,
+                            -0.9295,
+                            -0.3090
+                        ],
+                        "size": [
+                            0.48,
+                            0.41,
+                            1.5
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "scannet: scene0702_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0702_00/scene0702_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "space_level",
+                "action_steps":[
+                    {
+                        "action": "Assuming you are sitting on the toilet, a small plant with a diameter of 0.2 meters and a height of 0.3 meters is placed to the right above the toilet tank, leaning against the wall.",
+                        "position": [
+                            0.14,
+                            0.92,
+                            0.88
+                        ],
+                        "size": [
+                            0.2,
+                            0.2,
+                            0.3
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "scannet: scene0704_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0704_00/scene0704_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "space_level",
+                "action_steps":[
+                    {
+                        "action": "Facing the shelves, install a 40-inch TV with a thickness of 0.2 meters at a height of 0.6 meters from the floor in the middle of the wall on the right side of the shelves.",
+                        "position": [
+                            -1.9,
+                            0.27,
+                            0.92
+                        ],
+                        "size": [
+                            0.2,
+                            0.9,
+                            0.5
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "3RScan: scene0219_00":{
+        "mesh_file": "./assets/gif_explorer_data/3RScan/scans/scene0219_00/scene0219_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "space_level",
+                "action_steps":[
+                    {
+                        "action": "Getting off from the middle of the foot of the bed, turn right and walk 2 meters, turn right again and walk 2 meters. Place a vase measuring 0.4 meters in diameter and 0.8 meters in height centering at the current position.",
+                        "position": [
+                            2.1259,
+                            4.1020,
+                            -1.1630
+                        ],
+                        "size": [
+                            0.4,
+                            0.4,
+                            0.8
                         ]
                     }
                 ]
