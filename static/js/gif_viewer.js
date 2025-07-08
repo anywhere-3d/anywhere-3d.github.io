@@ -222,11 +222,11 @@ function init_mesh_viewer(){
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.addEventListener('change', function(){
         renderer.render(scene, camera);
-        renderer_seg.render(scene_seg, camera);
+        // renderer_seg.render(scene_seg, camera);
     })
     const animate = function () {
         renderer.render(scene, camera);
-        renderer_seg.render(scene_seg, camera);
+        // renderer_seg.render(scene_seg, camera);
         controls.update();
         tween.update();
         tweencamera.update();
