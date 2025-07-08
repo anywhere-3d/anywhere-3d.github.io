@@ -22,5 +22,29 @@
                 ]
             }
         ]
+    },
+    "scannet: scene0063_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0063_00/scene0063_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "part_level",
+                "action_steps":[
+                    {
+                        "action": "Which compartment of the refrigerator can store seafood and other items that need to be kept below 0 degrees?",
+                        "position": [
+                            2.04,
+                            -0.13,
+                            0.58
+                        ],
+                        "size": [
+                            0.64,
+                            0.74,
+                            1.07
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 }
