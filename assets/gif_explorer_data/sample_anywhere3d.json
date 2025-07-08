@@ -46,5 +46,29 @@
                 ]
             }
         ]
+    },
+    "scannet: scene0221_00":{
+        "mesh_file": "./assets/gif_explorer_data/scannet/scans/scene0221_00/scene0221_00_vh_clean_2.ply",
+        "align_mat": 0,
+        "seq_grounding":[
+            {
+                "task_description": "part_level",
+                "action_steps":[
+                    {
+                        "action": "Pull out the second drawer on the left side of the desk by 0.3 meters.",
+                        "position": [
+                            0.97,
+                            1.35,
+                            0.27
+                        ],
+                        "size": [
+                            0.61,
+                            0.78,
+                            0.23
+                        ]
+                    }
+                ]
+            }
+        ]
     }
 }
