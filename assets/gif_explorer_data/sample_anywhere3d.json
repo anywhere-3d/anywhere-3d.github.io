@@ -1,22 +1,22 @@
 {
-    "ARKitScenes: scene0161_00":{
-        "mesh_file": "./assets/gif_explorer_data/ARKitScenes/scans/scene0161_00/scene0161_00_vh_clean_2.ply",
+    "ARKitScenes: scene0040_00":{
+        "mesh_file": "./assets/gif_explorer_data/ARKitScenes/scans/scene0040_00/scene0040_00_vh_clean_2.ply",
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "area_level",
+                "task_description": "part_level",
                 "action_steps":[
                     {
-                        "action": "If I want to have a comfortable and relaxing conversation with four or five friends while drinking coffee, which area should we choose?",
+                        "action": "When I am working at the table, choose the top drawer on the right-hand side beneath the table.",
                         "position": [
-                            -4.52,
-                            -0.33,
-                            -0.07
+                            2.56,
+                            -2.35,
+                            -0.7
                         ],
                         "size": [
-                            3.62,
-                            2.68,
-                            2.42
+                            0.3,
+                            0.67,
+                            0.21
                         ]
                     }
                 ]
