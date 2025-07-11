@@ -4,7 +4,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "area_level",
+                "task_description": "area level",
                 "action_steps":[
                     {
                         "action": "Imagine you are about to deep clean the room. Identify the area with the most cluttered object arrangement.",
@@ -28,7 +28,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "area_level",
+                "task_description": "area level",
                 "action_steps":[
                     {
                         "action": "Choose the protruding area of the room, where you can sit on the armchair or stand in front of the curtains to gaze at the view outside the window.",
@@ -52,7 +52,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "space_level",
+                "task_description": "space level",
                 "action_steps":[
                     {
                         "action": "Face the wall, then move the largest sofa couch 0.5 meters to the left.",
@@ -76,7 +76,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "space_level",
+                "task_description": "space level",
                 "action_steps":[
                     {
                         "action": "Replace the shelf with another shelf of a lower height, reducing its height to 1.5 meters.",
@@ -100,7 +100,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "space_level",
+                "task_description": "space level",
                 "action_steps":[
                     {
                         "action": "Assuming you are sitting on the toilet, a small plant with a diameter of 0.2 meters and a height of 0.3 meters is placed to the right above the toilet tank, leaning against the wall.",
@@ -124,7 +124,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "space_level",
+                "task_description": "space level",
                 "action_steps":[
                     {
                         "action": "Facing the shelves, install a 40-inch TV with a thickness of 0.2 meters at a height of 0.6 meters from the floor in the middle of the wall on the right side of the shelves.",
@@ -148,7 +148,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "space_level",
+                "task_description": "space level",
                 "action_steps":[
                     {
                         "action": "Getting off from the middle of the foot of the bed, turn right and walk 2 meters, turn right again and walk 2 meters. Place a vase measuring 0.4 meters in diameter and 0.8 meters in height centering at the current position.",
@@ -172,7 +172,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "object_level",
+                "task_description": "object level",
                 "action_steps":[
                     {
                         "action": "Locate a table with an aspect ratio of approximately 2:1",
@@ -196,7 +196,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "object_level",
+                "task_description": "object level",
                 "action_steps":[
                     {
                         "action": "Which object occupies an area of approximately 1.7 square meters and is located beneath a painting?",
@@ -220,7 +220,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "object_level",
+                "task_description": "object level",
                 "action_steps":[
                     {
                         "action": "Which washing machine is 0.3 meters away from the sink?",
@@ -244,7 +244,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "part_level",
+                "task_description": "part level",
                 "action_steps":[
                     {
                         "action": "When I am working at the table, choose the top drawer on the right-hand side beneath the table.",
@@ -268,7 +268,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "part_level",
+                "task_description": "part level",
                 "action_steps":[
                     {
                         "action": "Which compartment of the refrigerator can store seafood and other items that need to be kept below 0 degrees?",
@@ -292,7 +292,7 @@
         "align_mat": 0,
         "seq_grounding":[
             {
-                "task_description": "part_level",
+                "task_description": "part level",
                 "action_steps":[
                     {
                         "action": "Pull out the second drawer on the left side of the desk by 0.3 meters.",
