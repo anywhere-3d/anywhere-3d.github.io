@@ -1,1 +1,0 @@
-The model CANNOT estimate the carpet size using the BEV.

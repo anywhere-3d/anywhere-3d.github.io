@@ -1,1 +1,0 @@
-Perception error: The model fails to recognize ground-truth object(object-2), which is also a cabinet under the tv monitor.

@@ -1,1 +1,0 @@
-Model does not understand the situation(lying on the bed) and the spatial relationships (upper right corner) under the situation.

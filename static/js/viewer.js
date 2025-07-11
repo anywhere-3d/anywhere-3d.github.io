@@ -716,7 +716,7 @@ function view_scene(){
     }
 }
 
-function load_case_carousel(jsonPath = './assets/data/cases.json') {
+function load_case_carousel(jsonPath = './assets/Gemini_2.5_pro_qual_results/cases.json') {
     // Load marked.js if not already loaded
     if (typeof marked === 'undefined') {
         const script = document.createElement('script');
@@ -751,28 +751,28 @@ function load_case_carousel(jsonPath = './assets/data/cases.json') {
                     };
 
                     // BEV Visualization Section with Toggle
-                    const bevSection = item.BEV_path ? `
-                        <div class="case-box case-visualization mt-3">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h4>Bird's-Eye View (BEV)</h4>
-                                <button class="btn btn-sm btn-outline-primary toggle-bev" 
-                                        type="button" 
-                                        aria-label="Toggle BEV view">
-                                    👁️ Toggle BEV
-                                </button>
-                            </div>
-                            <div class="bev-container collapse">
-                                <img src="${item.BEV_path}" 
-                                     class="img-fluid mt-2" 
-                                     style="max-height: 800px; width: auto;"
-                                     alt="Bird's Eye View" />
-                            </div>
-                        </div>
-                    ` : '';
+                    // const bevSection = item.BEV_path ? `
+                    //     <div class="case-box case-visualization mt-3">
+                    //         <div class="d-flex justify-content-between align-items-center">
+                    //             <h4>Bird's-Eye View (BEV)</h4>
+                    //             <button class="btn btn-sm btn-outline-primary toggle-bev" 
+                    //                     type="button" 
+                    //                     aria-label="Toggle BEV view">
+                    //                 👁️ Toggle BEV
+                    //             </button>
+                    //         </div>
+                    //         <div class="bev-container collapse">
+                    //             <img src="${item.BEV_path}" 
+                    //                  class="img-fluid mt-2" 
+                    //                  style="max-height: 800px; width: auto;"
+                    //                  alt="Bird's Eye View" />
+                    //         </div>
+                    //     </div>
+                    // ` : '';
 
                     const errorContent = item.error ? 
                         `<div class="case-box case-error mt-3">
-                            <h4>Error</h4>
+                            <h4>Error Type</h4>
                             <p>${formatText(item.error)}</p>
                         </div>` :
                         `<div class="case-box case-success mt-3">
