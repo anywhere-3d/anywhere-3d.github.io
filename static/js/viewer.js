@@ -910,7 +910,7 @@ function main() {
     init_mesh_viewer();
     load_datas();
     load_case_carousel_Gemini_qual_results();
-    load_case_Gemini_GPT_4_1_comparison()
+    load_case_carousel_Gemini_vs_GPT_comparison()
 }
 
 // Ensure Bootstrap JS is loaded
