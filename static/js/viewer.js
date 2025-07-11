@@ -103,7 +103,7 @@ function renderMessageEleSeq(data, type) {
             taskEle.style.fontWeight = "bold";
             taskEle.style.backgroundColor = "#87CEEB";  // sky blue
             taskEle.style.border = "double";
-            taskEle.textContent = `Visual Grounding Level: ${item.task_description}`;
+            taskEle.textContent = `Grounding Level: ${item.task_description}`;
             chatBody.append(taskEle);
             item.action_steps.forEach(step => {
                 const stepEle = document.createElement("button");
@@ -115,7 +115,7 @@ function renderMessageEleSeq(data, type) {
                 stepEle.style.backgroundColor = "#FFE066";  // light gold
                 stepEle.style.color = "black";
                 stepEle.style.border = "outset";
-                stepEle.textContent = "Expression:" + step.action;
+                stepEle.textContent = "Expression: " + step.action;
                 stepEle.addEventListener("click", function() {
                     console.log("Step element clicked!");
                     camera_look_target(step.size, step.position, 2000);
