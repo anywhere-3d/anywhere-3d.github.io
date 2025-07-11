@@ -215,18 +215,18 @@ function init_mesh_viewer(){
     document.getElementById("mesh_viewer").innerHTML = "";
     document.getElementById("mesh_viewer").appendChild(renderer.domElement);
 
-    init_segmentation();
-    document.getElementById("segmentation").innerHTML = "";
-    document.getElementById("segmentation").appendChild(renderer_seg.domElement);
+    // init_segmentation();
+    // document.getElementById("segmentation").innerHTML = "";
+    // document.getElementById("segmentation").appendChild(renderer_seg.domElement);
 
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.addEventListener('change', function(){
         renderer.render(scene, camera);
-        renderer_seg.render(scene_seg, camera);
+        // renderer_seg.render(scene_seg, camera);
     })
     const animate = function () {
         renderer.render(scene, camera);
-        renderer_seg.render(scene_seg, camera);
+        // renderer_seg.render(scene_seg, camera);
         controls.update();
         tween.update();
         tweencamera.update();
@@ -236,10 +236,12 @@ function init_mesh_viewer(){
     animate();
     // add_label_listener();
 }
+
+
 function displayPointCloud(file, name, size=0.02, position=false, rotation=false, seg_flag = false) {
     // scene.add(axesHelper);
     // scene.add(gridHelper);
-    file = file.replace('/mnt/fillipo/scratch/masaccio/existing_datasets', './assets/datas');
+    // file = file.replace('/mnt/fillipo/scratch/masaccio/existing_datasets', './assets/gif_explorer_data');
     var ext = file.split('.').pop();
     file_path = file;
     if(ext=='ply'){
@@ -265,6 +267,8 @@ function displayPointCloud(file, name, size=0.02, position=false, rotation=false
         });
     }
 }
+
+
 function init_scene(){
     console.log(selected_scenes_list.value)
     var scene_name = selected_scenes_list.value;
@@ -274,7 +278,8 @@ function init_scene(){
     cleanChat();
     object_mesh_names = []
     displayPointCloud(scene_info['mesh_file'], scene_name, size=0.02, position=scene_info['position'], rotation=scene_info['align_mat'], seg_flag=false);
-    displayPointCloud(scene_info['seg_file'], scene_name+'-seg', size=0.02, position=scene_info['position'], rotation=scene_info['align_mat'], seg_flag=true);
+    //displayPointCloud(scene_info['seg_file'], scene_name+'-seg', size=0.02, position=scene_info['position'], rotation=scene_info['align_mat'], seg_flag=true);
+    
     // for (var obj of scene_info['objects_info']){
     //     var obj_name = obj['label'] + obj['id'];
     //     displayPointCloud(obj['mesh'], obj_name, size=0.02, position=scene_info['position'], rotation=scene_info['align_mat']);
@@ -296,25 +301,25 @@ async function load_datas(){
     checkAndExecuteSeqGrounding();
 }
 
-// document.getElementById("scene_list").addEventListener("change", async function () {
-//     init_scene();
-//     init_tween();
-//     checkAndExecuteSeqGrounding();
-// });
+document.getElementById("scene_list").addEventListener("change", async function () {
+    init_scene();
+    init_tween();
+    checkAndExecuteSeqGrounding();
+});
 
-// window.addEventListener('resize',function() {
-//     mesh_viewer = document.getElementById("mesh_viewer");
-//     mesh_seg_viewer = document.getElementById("segmentation");
+window.addEventListener('resize',function() {
+    mesh_viewer = document.getElementById("mesh_viewer");
+    // mesh_seg_viewer = document.getElementById("segmentation");
 
-//     camera.aspect = mesh_viewer.clientWidth / mesh_viewer.clientHeight;
-//     camera.updateProjectionMatrix();
-//     renderer.setSize(mesh_viewer.clientWidth, mesh_viewer.clientHeight);
-//     renderer_seg.setSize(mesh_seg_viewer.clientWidth, mesh_seg_viewer.clientHeight);
-//     if(scene_graph) {
-//         scene_graph.initalLayout.run();
-//     }
+    camera.aspect = mesh_viewer.clientWidth / mesh_viewer.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(mesh_viewer.clientWidth, mesh_viewer.clientHeight);
+    // renderer_seg.setSize(mesh_seg_viewer.clientWidth, mesh_seg_viewer.clientHeight);
+    if(scene_graph) {
+        scene_graph.initalLayout.run();
+    }
 
-// });
+});
 
 function get_meshsize(mesh){
     const box = new THREE.Box3().setFromObject(mesh);
@@ -347,8 +352,8 @@ function box_debug(position, size=(1, 1, 1), lineWidth=10, clear=true){
     const geometry = new THREE.BoxGeometry(size[0], size[1], size[2]);
     const edgesGeometry = new THREE.EdgesGeometry(geometry);
     // const lineMaterial = new THREE.LineBasicMaterial({ color: 0xff0000, linewidth: lineWidth });
-    const lineMaterial = new THREE.LineBasicMaterial({ color: 'red'});
-    lineMaterial.linewidth = lineWidth;
+    const lineMaterial = new THREE.LineBasicMaterial({ color: 'green'});
+    lineMaterial.linewidth = 5;
     const boxLine = new THREE.LineSegments(edgesGeometry, lineMaterial);
     boxLine.name = 'show_box';
     boxLine.position.copy(pos);
@@ -832,6 +837,8 @@ function load_case_carousel(jsonPath = './assets/data/cases.json') {
 }
 
 function main() {
+    init_mesh_viewer();
+    load_datas();
     load_case_carousel();
 }
 
