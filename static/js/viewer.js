@@ -745,7 +745,7 @@ function load_case_carousel(jsonPath = './assets/Gemini_2.5_pro_qual_results/cas
                         const dirty = marked.parse(text);
                         const clean = DOMPurify.sanitize(dirty, {
                             ALLOWED_TAGS: ['p', 'ul', 'ol', 'li', 'strong', 'em', 'code', 'pre', 'span'],
-                            ALLOWED_ATTR: ['class']
+                            ALLOWED_ATTR: ['class', 'style']
                         });
                         return clean;
                     };
