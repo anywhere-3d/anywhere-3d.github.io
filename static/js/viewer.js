@@ -467,7 +467,7 @@ function get_selected_dom(){
 
 function cleanPointCloud() {
     scene.children = []
-    scene_seg.children = []
+    // scene_seg.children = []
 }
 
 function set_basecam(){
