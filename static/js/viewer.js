@@ -731,9 +731,9 @@ function load_case_carousel(jsonPath = './assets/Gemini_2.5_pro_qual_results/cas
         fetch(path)
             .then(response => response.json())
             .then(data => {
-                const carouselInner = document.getElementById("carouselInner");
-                if (!carouselInner) {
-                    console.warn("Carousel container not found.");
+                const carousel_Gemini_qual_results = document.getElementById("carousel_Gemini_qual_results");
+                if (!carousel_Gemini_qual_results) {
+                    console.warn("carousel_Gemini_qual_results container not found.");
                     return;
                 }
         
@@ -811,7 +811,7 @@ function load_case_carousel(jsonPath = './assets/Gemini_2.5_pro_qual_results/cas
                         </div>
                     `;
                       
-                    carouselInner.insertAdjacentHTML("beforeend", itemHTML);
+                    carousel_Gemini_qual_results.insertAdjacentHTML("beforeend", itemHTML);
                 });
 
                 // Add event listeners after all items are loaded
