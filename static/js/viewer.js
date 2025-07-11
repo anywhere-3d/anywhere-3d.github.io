@@ -38,7 +38,7 @@ const modeList = ["obj_cap", "anno", "rewrite", "template"]
 // get scene data 
 async function loadLocalData() {
     try {
-      const response = await fetch("./assets/datas/sample_seq.json");
+      const response = await fetch("./assets/gif_explorer_data/sample_anywhere3d.json");
       scene_datas = await response.json();
       console.log("Data loaded:", scene_datas);
     } catch (error) {
