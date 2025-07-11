@@ -852,7 +852,7 @@ function load_case_carousel_Gemini_vs_GPT_comparison(jsonPath = './assets/GPT_4.
         fetch(path)
             .then(response => response.json())
             .then(data => {
-                const carousel_Gemini_vs_GPT_comparison = document.getElementById("carousel_Gemini_vs_GPT_4.1_comparison");
+                const carousel_Gemini_vs_GPT_comparison = document.getElementById("carousel_Gemini_vs_GPT_4_1_comparison");
                 if (!carousel_Gemini_vs_GPT_comparison) {
                     console.warn("carousel_Gemini_vs_GPT_comparison container not found.");
                     return;
