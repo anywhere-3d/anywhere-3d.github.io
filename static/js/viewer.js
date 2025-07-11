@@ -716,7 +716,7 @@ function view_scene(){
     }
 }
 
-function load_case_carousel(jsonPath = './assets/Gemini_2.5_pro_qual_results/cases.json') {
+function load_case_carousel_Gemini_qual_results(jsonPath = './assets/Gemini_2.5_pro_qual_results/cases.json') {
     // Load marked.js if not already loaded
     if (typeof marked === 'undefined') {
         const script = document.createElement('script');
@@ -836,10 +836,81 @@ function load_case_carousel(jsonPath = './assets/Gemini_2.5_pro_qual_results/cas
     }
 }
 
+
+function load_case_carousel_Gemini_vs_GPT_comparison(jsonPath = './assets/GPT_4.1_vs_Gemini_2.5_pro/cases.json') {
+    // Load marked.js if not already loaded
+    if (typeof marked === 'undefined') {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+        script.onload = () => fetchAndProcessCases(jsonPath);
+        document.head.appendChild(script);
+    } else {
+        fetchAndProcessCases(jsonPath);
+    }
+
+    function fetchAndProcessCases(path) {
+        fetch(path)
+            .then(response => response.json())
+            .then(data => {
+                const carousel_Gemini_vs_GPT_comparison = document.getElementById("carousel_Gemini_vs_GPT_4.1_comparison");
+                if (!carousel_Gemini_vs_GPT_comparison) {
+                    console.warn("carousel_Gemini_vs_GPT_comparison container not found.");
+                    return;
+                }
+        
+                data.forEach((item, index) => {
+                    const isActive = index === 0 ? "active" : "";
+                    
+                    const formatText = (text) => {
+                        if (!text) return '';
+                        const dirty = marked.parse(text);
+                        const clean = DOMPurify.sanitize(dirty, {
+                            ALLOWED_TAGS: ['p', 'ul', 'ol', 'li', 'strong', 'em', 'code', 'pre', 'span'],
+                            ALLOWED_ATTR: ['class', 'style']
+                        });
+                        return clean;
+                    };
+
+                    // const errorContent = item.error ? 
+                    //     `<div class="case-box case-error mt-3">
+                    //         <h4>Error Type</h4>
+                    //         <p>${formatText(item.error)}</p>
+                    //     </div>` :
+                    //     `<div class="case-box case-success mt-3">
+                    //         <h4>Correct</h4>
+                    //         <p>✅ This is a successful case</p>
+                    //     </div>`;
+
+                    const itemHTML = `
+                        <div class="carousel-item ${isActive}">
+                            <div class="p-3">
+                                <div class="text-center">
+                                    <img src="${item.img_path}" 
+                                         class="img-fluid" 
+                                         style="max-height: 500px;" 
+                                         alt="Case Image" />
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                      
+                    carousel_Gemini_vs_GPT_comparison.insertAdjacentHTML("beforeend", itemHTML);
+                });
+                
+            })
+            .catch(error => {
+                console.error("Failed to load cases.json:", error);
+            });
+    }
+}
+
+
+
 function main() {
     init_mesh_viewer();
     load_datas();
-    load_case_carousel();
+    load_case_carousel_Gemini_qual_results();
+    load_case_Gemini_GPT_4_1_comparison()
 }
 
 // Ensure Bootstrap JS is loaded
