@@ -803,7 +803,7 @@ function load_case_carousel(jsonPath = './assets/Gemini_2.5_pro_qual_results/cas
                                         </div>
                                     </div>
 
-                                    ${bevSection}
+                                    
 
                                     ${errorContent}
                                 </div>
