@@ -1,1 +1,0 @@
-The model fails to correctly interpret the armchair’s orientation with respect to the x and y axes.

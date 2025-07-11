@@ -1,1 +1,0 @@
-The model fails to understand what is inside or outside the scene.

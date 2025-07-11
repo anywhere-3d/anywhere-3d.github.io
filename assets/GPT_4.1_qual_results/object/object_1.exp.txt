@@ -1,0 +1,1 @@
+Which object appears as a circle when viewed from above and has a height near 0.5 meters.
