@@ -26,5 +26,26 @@
         "reasoning": "The perspective is 'lying in the bathtub'. The bathtub's longest dimension is along the x-axis. Typically, one lies along the longest axis. From the images, the toilet is on the side of the tub with larger y-coordinates. <span style='font-weight:bold; color:#FF0066;'>The head of the tub, where one would lie, is at the end with the smaller x-coordinate.</span>",
         "error": "Logical Reasoning Error",
         "BEV_path": null
+    },
+    {
+        "img_path": "assets/Gemini_2.5_pro_qual_results/spatial_reasoning/spatial_reasoning_1.png",
+        "expression": "Facing the piano, place a small speaker measuring 0.2 meters in length, 0.13 meters in width, and 0.2 meters in height immediately next to the wall on the far right of the piano, ensuring easy listening while seated on the piano bench.",
+        "reasoning": "Reference Frame: The expression 'Facing the piano' establishes the orientation. The piano (object-1) is positioned with its keyboard facing the positive y-direction. A person sitting on the piano bench (object-12) would be facing the piano, i.e., looking in the negative y-direction. <span style='font-weight:bold; color:#FF0066;'>From this perspective, 'right' corresponds to the positive x-direction.</span>",
+        "error": "Spatial Reasoning Error",
+        "BEV_path": null
+    },
+    {
+        "img_path": "assets/Gemini_2.5_pro_qual_results/spatial_reasoning/spatial_reasoning_2.png",
+        "expression": "Facing the 3.2-meter-long bookshelf adjacent to the bench, identify its third column from the right.",
+        "reasoning": "'Facing the bookshelf' from the central aisle means looking in the negative y-direction. <span style='font-weight:bold; color:#FF0066;'>In this orientation, the 'right' side of the bookshelf corresponds to the end with the larger x-coordinate.</span>",
+        "error": "Spatial Reasoning Error",
+        "BEV_path": null
+    },
+    {
+        "img_path": "assets/Gemini_2.5_pro_qual_results/spatial_reasoning/spatial_reasoning_3.png",
+        "expression": "Facing away from the picture, replace all current washing machines with new washing machines that have a height of 1.5 meters while keeping other dimensions unchanged, ensuring they remain positioned to the left of the dryers.",
+        "reasoning": "'Facing away' means looking in the direction of the negative y-axis. <span style='font-weight:bold; color:#FF0066;'>In this orientation, 'left' corresponds to the negative x-direction.</span>",
+        "error": "Spatial Reasoning Error",
+        "BEV_path": null
     }
 ]
