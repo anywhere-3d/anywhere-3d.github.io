@@ -2,7 +2,7 @@
     {
         "img_path": "assets/Gemini_2.5_pro_qual_results/visual_perception/visual_perception_1.png",
         "expression": "Find the table approximately 0.9 meters away from the slanted-positioned table.",
-        "reasoning": "Identify the 'slanted-positioned table': analyze the Bird's Eye View (BEV) image to locate a table that is positioned at an angle relative to the other tables and the room's layout. The tables `object-31`, `object-32`, <span style='font-weight: bold; color: #FF0066;'>`object-36`</span>, and `object-37` are <span style='font-weight: bold; color: #FF0066;'>all aligned with the primary axes of the room.</span> In contrast, <span style='font-weight: bold; color: #FF0066;'>`object-35` is clearly positioned at a diagonal, making it the `slanted-positioned table`</span>",
+        "reasoning": "Identify the 'slanted-positioned table': analyze the Bird's Eye View (BEV) image to locate a table that is positioned at an angle relative to the other tables and the room's layout. The tables 'object-31', 'object-32', <span style='font-weight: bold; color: #FF0066;'>'object-36'</span>, and 'object-37' are <span style='font-weight: bold; color: #FF0066;'>all aligned with the primary axes of the room.</span> In contrast, <span style='font-weight: bold; color: #FF0066;'>'object-35' is clearly positioned at a diagonal, making it the 'slanted-positioned table'</span>",
         "error": "Visual Perception Error",
         "BEV_path": null
     }
